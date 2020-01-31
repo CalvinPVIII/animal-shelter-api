@@ -1,6 +1,11 @@
 class AnimalsController < ApplicationController
   def index
+    species = params[:species]
+    if species != nil
+      @animals = Animal.search_species(species)
+    else
       @animals = Animal.all
+    end
     json_response(@animals)
   end
 
