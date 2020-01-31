@@ -5,4 +5,8 @@ class Animal < ApplicationRecord
       where("species like ?", "%#{species.titleize}%")
     end
 
+    def self.search_gender(gender)
+        where("gender like ?", "#{gender.titleize}")
+      end
+
 end

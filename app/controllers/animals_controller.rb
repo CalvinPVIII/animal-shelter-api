@@ -1,8 +1,11 @@
 class AnimalsController < ApplicationController
   def index
     species = params[:species]
+    gender = params[:gender]
     if species != nil
       @animals = Animal.search_species(species)
+    elsif gender != nil
+      @animals = Animal.search_gender(gender)
     else
       @animals = Animal.all
     end
