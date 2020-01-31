@@ -8,5 +8,7 @@ class Animal < ApplicationRecord
     def self.search_gender(gender)
         where("gender like ?", "#{gender.titleize}")
       end
-
+      def self.search_breed(breed)
+          where("breed like ?", "%#{breed.titleize}%")
+        end
 end
