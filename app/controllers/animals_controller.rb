@@ -3,12 +3,15 @@ class AnimalsController < ApplicationController
     species = params[:species]
     gender = params[:gender]
     breed = params[:breed]
+    name = params[:name]
     if species != nil
       @animals = Animal.search_species(species)
     elsif gender != nil
       @animals = Animal.search_gender(gender)
     elsif breed != nil
       @animals = Animal.search_breed(breed)
+    elsif name != nil
+      @animals = Animal.search_name(name)
     else
       @animals = Animal.all
     end
