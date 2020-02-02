@@ -1,24 +1,59 @@
-# README
+## Animal Shelter API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _An API featuring animals at the animal shelter_
 
-Things you may want to cover:
+#### By _Calvin Will_
 
-* Ruby version
+## How To Use
 
-* System dependencies
+For get requests no authentication required.
 
-* Configuration
+/animals will give you a list of all characters
 
-* Database creation
+adding a name parameter will return animals that match the given parameter.
 
-* Database initialization
+Example: /animals?name=fred
+will return animals named Fred and Freddie
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+adding a species parameter will return animals from that species.
 
-* Deployment instructions
+Example: /animals?species=cat
+will return all the cats
 
-* ...
+adding a gender parameter will return all male or female animals.
+
+Example: /animals?gender=male
+will return all male animals
+
+adding a breed parameter will return all animals of that breed.
+
+Example: /animals?breed=terrier
+will return Jack Russell Terriers, Scottish Terriers, and others
+
+
+## Setup/Installation Requirements
+
+* _Clone from GitHub_
+* _Navigate to the project folder_
+* _Run the commands "bundle", "rake db:create", "rake db:migrate", "rake db:seed", and then "rails s"_
+
+## Known Bugs
+
+_Currently there are no known bugs_
+
+## Support and contact details
+
+_For questions, comments, or concerns, email me at calvinp003@gmail.com_
+
+## Technologies Used
+
+* _Ruby_
+* _Rails_
+* _Postgresql_
+
+### License
+
+*Licensed Under MIT*
+
+Copyright (c) 2020 **_Calvin Will_**
