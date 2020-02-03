@@ -1,4 +1,7 @@
 class AnimalsController < ApplicationController
+  include ActionController::HttpAuthentication::Token::ControllerMethods
+  TOKEN = 'secret'
+  before_action :authenticate, except: [:index, :show]
   def index
     species = params[:species]
     gender = params[:gender]
@@ -47,6 +50,11 @@ class AnimalsController < ApplicationController
   end
 
   private
+  def authenticate
+   authenticate_or_request_with_http_token do |token, options|
+     ActiveSupport::SecurityUtils.secure_compare(token, TOKEN)
+   end
+ end
   def animal_params
     params.permit(:name,:bio,:species,:gender,:breed,:image)
   end

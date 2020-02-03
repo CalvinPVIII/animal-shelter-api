@@ -32,6 +32,10 @@ Example: /animals?breed=terrier
 will return Jack Russell Terriers, Scottish Terriers, and others
 
 
+To do POST, PATCH, or DELETE calls, make sure you have a header with the key of "Authorization" and the value of "Bearer secret"
+
+The token can be changed by changing the value on line 3 of application_controller.rb
+
 ## Setup/Installation Requirements
 
 * _Clone from GitHub_
